@@ -1,0 +1,202 @@
+body{
+   margin: 2vmax;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   background-color: grey;
+}
+
+.nav-title >a >h1{
+   /* border: 2px solid; */
+   color: black;
+   font-size: 3vmax;
+   font-weight: 600;
+   margin-left: 1vmax;
+}
+
+.nav-title2{
+   margin-top: -4vmax;
+   display: flex;
+   justify-content: space-between;
+   font-size: 2vmax;
+   color: rgb(30, 30, 30);
+   /* border: solid; */
+   align-items: center;
+   margin-left: 1vmax;
+}
+.nav-title3{
+   display: flex;
+   justify-content: space-between;
+   /* border: solid; */
+}
+.nav-title3 >p{
+   padding: 1vmax;
+}
+a{
+   text-decoration: none;
+   color: rgb(30, 30, 30);
+}
+
+nav > hr{
+   margin-top: -2vmax;
+   width: 98%;
+}
+
+.blogs-content{
+   margin: 3vmax 5vmax;
+}
+.blogs-content >h2 {
+   text-align: center;
+   font-size: 3.5vmax;
+   font-weight: 400;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.blogs-content > h4{
+   font-size: 2.5vmax;
+   text-align: center;
+   font-weight: 400;
+}
+
+.blogs-data{
+   min-width: 20vmax;
+   width: fit-content;
+   max-height: 9.2vmax;
+   max-width: 80vw;
+   color: white;
+   background-color: rgb(55, 55, 53);
+   padding: 1.5vmax;
+   text-align: justify;
+   border-radius: 5px;
+   margin-top: -1vmax;
+   margin-bottom: 2vmax;
+   overflow-wrap: break-word;
+   overflow-x:hidden;
+}
+.blogs-data >h3{
+   font-size: 2vmax;
+   margin-top: .1vmax;
+   /* text-decoration: underline; */
+   text-underline-offset: 4px;
+   font-weight: 400;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.blogs-data >p{
+   font-size: 1.5vmax;
+   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   letter-spacing: .5mm;
+   font-weight: 300;
+   line-height: 2vmax;
+}
+
+
+.blogs-about > h2{
+   text-align: center;
+   font-size: 3.5vmax;
+   font-weight: 400;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.blogs-about > p{
+   font-size: 1.5vmax;
+   margin: 2vmax;
+   text-align: justify;
+}
+
+footer{
+   /* position: fixed; */
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   /* background-color: rgb(59, 56, 56); */
+   color: rgb(17, 16, 16);
+   text-align: center;
+   margin-top: 5vmax;
+}
+
+.create-content{
+   margin: 3vmax;
+   font-weight: 400;
+   font-size: 1.5vmax;
+   /* margin: 2vmax 15vmax; */
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   align-items: center;
+   color: white;
+   font-weight: 300;
+}
+.create-content > input{
+   border-radius: 10px;
+   font-size: 1.3vmax;
+   margin: 1vmax 30vmax;
+   padding: 1vmax;
+}
+
+.create-content > textarea{
+   margin: 1vmax;
+   border-radius: 10px;
+   font-size: 1.2vmax;
+   border: 2px solid;
+   padding: 1vmax;
+}
+
+.create-content > button{
+   width: fit-content;
+   border-radius: 10px;
+   font-size: 1.3vmax;
+   padding: .5vmax;
+   align-items: center;
+   cursor: pointer;
+   background-color: rgb(157, 154, 154);
+}
+
+.create-content > button:hover{
+   background-color: rgb(61, 59, 59);
+   color: white;
+}
+
+.not-found-content{
+   font-size: 2.5vmax;
+   text-align: center;
+   margin: 10vmax;
+}
+
+.blog-details{
+   margin: 1vmax;
+   font-size: 2vmax;
+   /* border: solid; */
+   text-align: justify;
+   overflow-wrap: break-word;
+}
+
+.td >h3{
+   font-weight: 500;
+   font-size: 3vmax;
+   width: fit-content;
+   text-transform: uppercase;
+   margin-right: 5vmax;
+   margin-left: 0;
+}
+
+.td{
+   /* border: solid; */
+   display: flex;
+   justify-content: space-between;
+   text-align: center;
+   align-items: center;
+}
+
+.delete{
+   cursor: pointer;
+   border: 2px solid;
+   padding: 5px;
+   margin-right: 1vmax;
+   border-radius: 5vmax;
+}
+
+.delete:hover{
+   background-color: black;
+   color: white;
+}
+.body{
+   margin: 0;
+   /* border: solid; */
+}
