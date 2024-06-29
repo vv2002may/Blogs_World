@@ -53,13 +53,12 @@ app.get('/about', (req,res) => {
 // app.use('/blogs',blogRoutes);
 
 app.get('/blogs', (req, res) => {
-   // res.send('<p>home!</p>');
+   res.send('<p>home!</p>');
    // res.sendFile('./views/index.html', {root:__dirname});
-   
-   Blog.find().sort({createdAt:-1})
-      .then((result) => {
-         res.render('index',{title:'All Blogs',blogs : result});
-   })
+   // Blog.find().sort({createdAt:-1})
+   //    .then((result) => {
+   //       res.render('index',{title:'All Blogs',blogs : result});
+   // })
 })
 
 
