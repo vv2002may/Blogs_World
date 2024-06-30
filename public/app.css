@@ -167,7 +167,15 @@ footer{
    font-size: 2vmax;
    /* border: solid; */
    text-align: justify;
+   
    overflow-wrap: break-word;
+}
+
+.blog-details >pre{
+   max-width: fit-content;
+   overflow-x: auto;
+   white-space: pre-wrap;
+   word-wrap: break-word;
 }
 
 .td >h3{
