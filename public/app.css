@@ -173,6 +173,7 @@ footer{
 .td >h3{
    font-weight: 500;
    font-size: 3vmax;
+   max-width: 50%;
    width: fit-content;
    text-transform: uppercase;
    margin-right: 5vmax;
