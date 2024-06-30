@@ -41,7 +41,7 @@ nav > hr{
 }
 
 .blogs-content{
-   margin: 3vmax 5vmax;
+   margin: 3vmax 5vmax;;
 }
 .blogs-content >h2 {
    text-align: center;
@@ -65,18 +65,22 @@ nav > hr{
    background-color: rgb(55, 55, 53);
    padding: 1.5vmax;
    text-align: justify;
-   border-radius: 5px;
+   border-radius: 10px;
    margin-top: -1vmax;
    margin-bottom: 2vmax;
    overflow-wrap: break-word;
    overflow-x:hidden;
 }
 .blogs-data >h3{
+   background-color: rgb(119, 122, 122);
+   padding: .5vmax;
+   border-radius: 10px;
    font-size: 2vmax;
    margin-top: .1vmax;
    /* text-decoration: underline; */
    text-underline-offset: 4px;
    font-weight: 400;
+   color: black;
    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .blogs-data >pre{
@@ -136,7 +140,6 @@ footer{
    font-size: 1.2vmax;
    border: 2px solid;
    padding: 1vmax;
-   white-space: pre;
    resize: none;
    text-wrap:wrap;
 }
@@ -173,27 +176,36 @@ footer{
 
 .blog-details >pre{
    max-width: fit-content;
-   overflow-x: auto;
+   /* overflow-x: auto; */
    white-space: pre-wrap;
-   word-wrap: break-word;
+   /* word-wrap: break-word; */
+}
+
+
+.td{
+   /* border: solid; */
+   color: white;
+   background-color: rgb(37, 36, 36);
+   display: flex;
+   border-radius: 20px;
+   justify-content: space-between;
+   text-align: center;
+   align-items: center;
+   height: fit-content ;
 }
 
 .td >h3{
-   font-weight: 500;
-   font-size: 3vmax;
+   /* text-overflow: break-word; */
+   overflow-wrap: break-word;
+   /* overflow-x:hidden; */
+   font-weight: 300;
+   font-size: 2.5vmax;
+   /* border: solid red; */
    max-width: 50%;
    width: fit-content;
    text-transform: uppercase;
    margin-right: 5vmax;
-   margin-left: 0;
-}
-
-.td{
-   /* border: solid; */
-   display: flex;
-   justify-content: space-between;
-   text-align: center;
-   align-items: center;
+   margin-left: 2vmax;
 }
 
 .delete{
@@ -203,10 +215,11 @@ footer{
    font-weight: 300;
    font-size: 1.5vmax;
    margin-right: 1vmax;
-   border-radius: 5vmax;
+   border-radius: 1vmax;
+   color: rgb(240, 234, 234);
 }
 
 .delete:hover{
    background-color: black;
-   color: white;
+   color: red;
 }
