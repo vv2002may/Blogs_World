@@ -3,12 +3,26 @@
    <%- include('./partials/head.ejs')  %>
 <body>
    
-   <%- include('./partials/nav.ejs')  %>
+   <nav>
+      <div class="nav-title2">
+         <div class="nav-title">
+         <a href="/"><h1>Blogs World</h1></a>
+         </div>
+         <div class="nav-title3">
+            <p class="clinks"><a class="delete" data-doc="<%- blog.id %>">Delete</a></p>
+            <p class="clinks"><a href="/">Blogs</a></p>
+            <p class="clinks"><a href="/about">About</a></p>
+            <p class="clinks"><a href="/blogs/create">New blog</a></p>
+         </div>
+      </div>
+      <hr/>
+   </nav>
+   
 
       <div class="blog-details">
          <div class="td">
             <h3 class="title"> <%- blog.title %> </h3>
-            <a class="delete" data-doc="<%- blog.id %>">Delete</a>
+            
          </div>
             <pre class="body"> <%= blog.body%> </pre>
       </div>
