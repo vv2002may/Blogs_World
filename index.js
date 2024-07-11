@@ -120,3 +120,5 @@ app.use((req, res) => {
 
    res.render('404',{title:'404'});
 })
+
+module.exports = app;
