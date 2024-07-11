@@ -13,9 +13,12 @@ const app = express();
 const dbURI = 'mongodb+srv://vv2002may:3256@cluster0.euxeilh.mongodb.net/blog_world?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(dbURI)
-   .then((result) => console.log('connected to db','http://localhost:3000/'))
+   // .then((result) => console.log('connected to db', 'http://localhost:3000/'))
+   .then(function (result) {
+      console.log('connected to db', 'http://localhost:3000/')
+      app.listen(3000)
+   })
    .catch((err) => console.log(err));
-   app.listen(3000)
 // register view engine
 app.set('view engine', 'ejs');
 
