@@ -15,7 +15,7 @@ const dbURI = 'mongodb+srv://vv2002may:3256@cluster0.euxeilh.mongodb.net/blog_wo
 mongoose.connect(dbURI)
    // .then((result) => console.log('connected to db', 'http://localhost:3000/'))
    .then(function (result) {
-      app.listen('https://blogs-world.vercel.app',()=>console.log('Server is running on port 3000'))
+      app.listen(3000,()=>console.log('Server is running on port 3000'))
       console.log('connected to db', 'http://localhost:3000/')
    })
    .catch((err) => console.log(err));
