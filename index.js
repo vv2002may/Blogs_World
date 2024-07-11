@@ -15,8 +15,8 @@ const dbURI = 'mongodb+srv://vv2002may:3256@cluster0.euxeilh.mongodb.net/blog_wo
 mongoose.connect(dbURI)
    // .then((result) => console.log('connected to db', 'http://localhost:3000/'))
    .then(function (result) {
-      console.log('connected to db', 'http://localhost:3000/')
       app.listen(3000)
+      console.log('connected to db', 'http://localhost:3000/')
    })
    .catch((err) => console.log(err));
 // register view engine
