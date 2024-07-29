@@ -1,13 +1,36 @@
 <nav>
    <div class="nav-title2">
       <div class="nav-title">
-      <a href="/"><h1>Blogs World</h1></a>
+         <a href="/">
+            <h1>Blogs World</h1>
+         </a>
       </div>
-      <div class="nav-title3">
+      <!-- <div class="nav-title3">
          <p class="clinks"><a href="/">Blogs</a></p>
-         <p class="clinks"><a href="/about">About</a></p>
+         <p class="clinks"><a href="/blogs/about">About</a></p>
          <p class="clinks"><a href="/blogs/create">New blog</a></p>
-      </div>
+         <% if(userName) { %>
+            <p class="clinks"><a href="/blogs/userhome"><%= userName %></a></p>
+            <p class="clinks"><a href="/blogs/signout">Sign out</a></p>
+            <% } else{%>
+               <p class="clinks"><a href="/blogs/signin">Sign in</a></p>
+               <p class="clinks"><a href="/blogs/signup">Sign up</a></p>
+               <% } %>
+      </div> -->
+
+      <div class="nav-title3">
+         <p class="clinks"><a href="/" class="<%= currentPage === '/' ? 'active' : '' %>">Blogs</a></p>
+         <p class="clinks"><a href="/blogs/about" class="<%= currentPage === 'about' ? 'active' : '' %>">About</a></p>
+         <p class="clinks"><a href="/blogs/create" class="<%= currentPage === 'create' ? 'active' : '' %>">New blog</a></p>
+         <% if(userName) { %>
+           <p class="clinks"><a href="/blogs/userhome" class="<%= currentPage === 'userhome' ? 'active' : '' %>"><%= userName %></a></p>
+           <p class="clinks"><a href="/blogs/signout" class="<%= currentPage === 'signout' ? 'active' : '' %>">Sign out</a></p>
+         <% } else { %>
+           <p class="clinks"><a href="/blogs/signin" class="<%= currentPage === 'signin' ? 'active' : '' %>">Sign in</a></p>
+           <p class="clinks"><a href="/blogs/signup" class="<%= currentPage === 'signup' ? 'active' : '' %>">Sign up</a></p>
+         <% } %>
+       </div>
+      
    </div>
-   <hr/>
+   <hr />
 </nav>

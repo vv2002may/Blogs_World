@@ -1,27 +1,24 @@
+const { uniq } = require('lodash');
 const { Timestamp } = require('mongodb');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const blogSchema = new Schema({
-   title: {
-      type: String,
-      required: true
-   },
-   snippet: {
-      type: String,
-      required: true
-   },
-   body: {
+   name: {
       type: String,
       required: true
    },
    email: {
       type: String,
-      // required: true
-   }
-   
+      required: true,
+      unique: true
+   },
+   password: {
+      type: String,
+      required: true
+   },
 },{timestamps: true});
 
-const Blog = mongoose.model('Blog', blogSchema);
+const users = mongoose.model('users', blogSchema);
 
-module.exports = Blog;
+module.exports = users;

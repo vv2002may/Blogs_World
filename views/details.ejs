@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-   <%- include('./partials/head.ejs')  %>
-<body>
-   
-   <nav>
-      <div class="nav-title2">
-         <div class="nav-title">
-         <a href="/"><h1>Blogs World</h1></a>
+<%- include('./partials/head.ejs') %>
+
+   <body>
+
+      <nav>
+         <div class="nav-title2">
+            <div class="nav-title">
+               <a href="/">
+                  <h1>Blogs World</h1>
+               </a>
+            </div>
+            <div class="nav-title3">
+
+               <p class="clinks"><a href="/">Blogs</a></p>
+               <p class="clinks"><a href="/blogs/about">About</a></p>
+               <p class="clinks"><a href="/blogs/create">New blog</a></p>
+               <% if(userName) { %>
+                  <p class="clinks usernamep"><a href="/blogs/userhome" class="usernamea">
+                        <%= userName %>
+                     </a></p>
+                  <p class="clinks"><a href="/blogs/signout">Sign out</a></p>
+
+                  <!-- <p class="clinks"><a class="delete" data-doc="<%- blog.id %>">Delete</a></p> -->
+                  <p class="clinks"><a class="delete" href="/blogs/delete/<%- blog.id %>">Delete</a></p>
+                  <% } else{%>
+                     <p class="clinks"><a href="/blogs/signin">Sign in</a></p>
+                     <% } %>
+            </div>
          </div>
-         <div class="nav-title3">
-            <p class="clinks"><a class="delete" data-doc="<%- blog.id %>">Delete</a></p>
-            <p class="clinks"><a href="/">Blogs</a></p>
-            <p class="clinks"><a href="/about">About</a></p>
-            <p class="clinks"><a href="/blogs/create">New blog</a></p>
-         </div>
-      </div>
-      <hr/>
-   </nav>
-   
+         <hr />
+      </nav>
+
 
       <div class="blog-details">
          <div class="td">
+            <h4><%= message %></h4>
             <h3 class="title"> <%- blog.title %> </h3>
-            
+
          </div>
-            <pre class="body"> <%= blog.body%> </pre>
+         <pre class="body"> <%= blog.body%> </pre>
       </div>
 
-   <%- include('./partials/footer.ejs')  %>
+      <%- include('./partials/footer.ejs') %>
 
-   <script>
-      const trashcan=document.querySelector('a.delete');
-      trashcan.addEventListener('click',(e)=>{
-         const endpoint=`/blogs/${trashcan.dataset.doc}`;
-         fetch(endpoint,{
-            method: 'DELETE'
-         })
-         .then((response)=>response.json())
-         .then((data)=>window.location.href=data.redirect)
-         .catch((err)=>console.log(err));
-      })
-   </script>
-</body>
+         <!-- <script>
+            const trashcan = document.querySelector('a.delete');
+            trashcan.addEventListener('click', (e) => {
+               const endpoint = `/blogs/${trashcan.dataset.doc}`;
+               fetch(endpoint, {
+                  method: 'DELETE'
+               })
+                  .then((response) => response.json())
+                  .then((data) => window.location.href = data.redirect)
+                  .catch((err) => console.log(err));
+            })
+         </script> -->
+   </body>
+
 </html>

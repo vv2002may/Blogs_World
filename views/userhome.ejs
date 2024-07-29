@@ -2,13 +2,12 @@
 <html lang="en">
    <%- include('./partials/head.ejs')  %>
 <body>
-   
    <%- include('./partials/nav.ejs')  %>
 
    <div class="blogs-content">
 
       <% if(blogs.length > 0) { %>
-         <h2>All blogs</h2>
+         <!-- <h2>All blogs</h2> -->
          <% blogs.forEach ( blog => { %>
          <a href="/blogs/<%- blog.id %>" class="a-blogs-data">
             <div class="blogs-data">
@@ -21,7 +20,6 @@
          <% } %>
 
    </div>
-
    <%- include('./partials/footer.ejs')  %>
 </body>
 </html>

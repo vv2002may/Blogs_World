@@ -28,17 +28,31 @@ body{
    /* border: solid; */
 }
 .nav-title3 >p{
-   padding: 1vmax;
+   /* padding: 1vmax; */
 }
 a{
    text-decoration: none;
    color: rgb(30, 30, 30);
    transition: all 0.3s;
 }
-p{
-   /* border: 2px solid; */
+.active{
+   background-color: #0ed6e4;
+   border-radius: 10px;
 }
-.clinks:hover{
+.nav-title3 a{
+   margin: 0px 0px;
+   padding: .7vmax;
+   border-radius: 10px;
+   /* background-color: rgb(157, 154, 154); */
+}
+.nav-title3 p{
+   margin: 0px 5px;
+   /* border: 1px solid;    */
+   /* padding: .5vmax;
+   border-radius: 10px; */
+   /* background-color: rgb(157, 154, 154); */
+}
+.nav-title3 a:hover{
    cursor: pointer;
    background-color: #0ed6e4;
    border-radius: 10px;
@@ -74,7 +88,7 @@ nav > hr{
 }
 .blogs-data{
    min-width: 20vmax;
-   max-height: 9.2vmax;
+   /* max-height: 9.2vmax; */
    max-width: 80vw;
    /* color: white; */
    /* background-color: rgb(55, 55, 53); */
@@ -85,7 +99,7 @@ nav > hr{
    margin-top: -1vmax;
    margin-bottom: 2vmax;
    overflow-wrap: break-word;
-   overflow-x:hidden;
+   /* overflow-x:hidden; */
    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 .blogs-data >h3{
@@ -130,31 +144,35 @@ footer{
    color: rgb(17, 16, 16);
    text-align: center;
    margin-top: 5vmax;
+   font-size: 1.2vmax;
 }
 
 .create-content{
-   margin: 3vmax;
+   /* margin: 3vmax; */
    font-size: 1.5vmax;
    /* margin: 2vmax 15vmax; */
    display: flex;
    flex-direction: column;
+   justify-content: center;
    text-align: center;
    align-items: center;
    /* color: white; */
    font-weight: 500;
 }
+
 .create-content > input{
-   border-radius: 10px;
+   border-radius: 5px;
    font-size: 1.3vmax;
    margin: 1vmax 30vmax;
    padding: 1vmax;
+   border: 1px solid;
 }
 
 .create-content > textarea{
    margin: 1vmax;
-   border-radius: 10px;
+   border-radius: 5px;
    font-size: 1.2vmax;
-   border: 2px solid;
+   border: 1px solid;
    padding: 1vmax;
    resize: none;
    text-wrap:wrap;
@@ -162,11 +180,12 @@ footer{
 
 .create-content > button{
    width: fit-content;
-   border-radius: 10px;
+   /* border-radius: 10px; */
    font-size: 1.3vmax;
    padding: .5vmax;
    align-items: center;
    cursor: pointer;
+   outline: none;
    /* background-color: rgb(157, 154, 154); */
 }
 
@@ -233,4 +252,31 @@ footer{
    margin-left: 2vmax;
    /* background-color: #0ed6e4; */
    padding: .5vmax;
+}
+
+
+.sign-in {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center; 
+}
+
+.sign-in > h2{
+   font-size: 2.5vmax;
+   font-weight: 400;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.message, .message > h2,a{
+   font-size: 1.5vmax;
+   font-weight: 500;
+   margin: 1vmax;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 5px;
+}
+
+.message > a{
+   color: #4285F4;
 }
