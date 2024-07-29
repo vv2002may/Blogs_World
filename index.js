@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
@@ -8,9 +9,9 @@ const blogRoutes = require('./routes/blogroutes.js');
 const app = express();
 
 // connect to MongoDB
-const dbURI = 'mongodb+srv://vv2002may:3256@cluster0.euxeilh.mongodb.net/blog_world';
+// const dbURI = 'mongodb+srv://vv2002may:3256@cluster0.euxeilh.mongodb.net/blog_world';
 
-mongoose.connect(dbURI)
+mongoose.connect(process.env.mongourl)
    .then(function (result) {
       app.listen(3000, () => console.log('Server is running on port 3000'))
       console.log('connected to DB', 'http://localhost:3000/')
