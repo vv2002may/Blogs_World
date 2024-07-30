@@ -1,27 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-   <%- include('./partials/head.ejs')  %>
-<body>
-   
-   <%- include('./partials/nav.ejs')  %>
+<%- include('./partials/head.ejs') %>
 
-   <div class="blogs-content">
+   <body>
+      <% if(details=='no' ) {%>
+         <%- include('./partials/nav.ejs') %>
 
-      <% if(blogs.length > 0) { %>
-         <h2>All blogs</h2>
-         <% blogs.forEach ( blog => { %>
-         <a href="/blogs/<%- blog.id %>" class="a-blogs-data">
-            <div class="blogs-data">
-                  <h3 class="title"> <%- blog.title %> </h3>
-                  <!-- <pre class="body"> <%= blog.body%> </pre> -->
-            </div>
-         </a>
-      <% } ) } else { %>
-         <h4>There are no blogs to display.</h4>
-         <% } %>
+            <% } else{%>
+               <nav>
+                  <div class="nav-title2">
+                     <div class="nav-title">
+                        <a href="/">
+                           <h1>Blogs World</h1>
+                        </a>
+                     </div>
+                     <div class="nav-title3">
 
-   </div>
+                        <p class="clinks"><a href="/" class="<%= currentPage === 'details' ? 'active' : '' %>">Blogs</a>
+                        </p>
+                        <p class="clinks"><a href="/blogs/about">About</a></p>
+                        <p class="clinks"><a href="/blogs/create">New blog</a></p>
+                        <% if(userName) { %>
+                           <p class="clinks usernamep"><a href="/blogs/userhome" class="usernamea">
+                                 <%= userName %>
+                              </a></p>
+                           <p class="clinks"><a href="/blogs/signout">Sign out</a></p>
 
-   <%- include('./partials/footer.ejs')  %>
-</body>
+                           <!-- <p class="clinks"><a class="delete" data-doc="<%- blog.id %>">Delete</a></p> -->
+                           <p class="clinks"><a class="delete" href="/blogs/delete/<%- blog.id %>">Delete</a></p>
+                           <% } else{%>
+                              <p class="clinks"><a href="/blogs/signin">Sign in</a></p>
+                              <p class="clinks"><a href="/blogs/signup">Sign up</a></p>
+                              <% } %>
+                     </div>
+                  </div>
+                  <hr />
+               </nav>
+               <% }%>
+                  <div class="homepage">
+
+                     <div class="blogs-content">
+
+                        <% if(blogs.length> 0) { %>
+                           <!-- <h2>All blogs</h2> -->
+                           <% blogs.forEach ( blog=> { %>
+                              <a href="/blogs/<%- blog.id %>"
+                                 class="blogs-data <%= blog_id === blog.id ? 'active' : '' %>">
+                                 <%- blog.title %>
+                              </a>
+                              <% } ) } else { %>
+                                 <h4>There are no blogs to display.</h4>
+                                 <% } %>
+
+                     </div>
+
+
+                     <!-- details -->
+                     <% if(details=='no' ) {%>
+                        <div class="blog-details">
+                           Home
+                        </div>
+
+                        <% } else{%>
+                           <div class="blog-details td">
+                              <h4>
+                                 <%= message %>
+                              </h4>
+                              <!-- <h3 class="title"> <%- blog.title %> </h3> -->
+
+                              <pre class="body"> <%= blog.body%> </pre>
+                           </div>
+                           <% }%>
+                  </div>
+
+                  <%- include('./partials/footer.ejs') %>
+   </body>
+
 </html>
