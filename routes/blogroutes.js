@@ -100,7 +100,7 @@ router.get('/', (req, res) => {
 
    Blog.find().sort({ createdAt: -1 })
       .then((result) => {
-         res.render('index', {blog_id:'', currentPage: '/', details:'no', message: '', title: 'All Blogs', blog: '', userName, blogs: result });
+         res.render('index', { blog_id: '', currentPage: '/', details: 'no', message: '', title: 'All Blogs', blog: '', userName, blogs: result });
       })
 })
 
@@ -113,7 +113,30 @@ router.get('/:id', (req, res) => {
       })
    Blog.findById(id)
       .then((result) => {
-         res.render('index', {blog_id:id, currentPage: 'details', details:'yes', message: '', blog: result,blogs, title: 'Blog Details', userName });
+         res.render('index', { blog_id: id, currentPage: 'details', details: 'yes', message: '', blog: result, blogs, title: 'Blog Details', userName });
+      })
+      .catch((err) => {
+         console.log(err);
+      });
+})
+
+router.get('/delete/:id', (req, res) => {
+   const id = req.params.id;
+   Blog.deleteOne({ _id: id, email: userEmail })
+      .then((result) => {
+         if (result.deletedCount > 0) {
+            Blog.find().sort({ createdAt: -1 })
+               .then((result) => {
+                  res.render('index', { blog_id: '', currentPage: '/', details: 'no', message: '', title: 'All Blogs', blog: '', userName, blogs: result });
+               })
+               // res.redirect('/blogs');
+         }
+         else {
+            Blog.findById(id)
+               .then((result) => {
+                  res.render('index', { blog_id: id, currentPage: 'details', details: 'yes', message: 'You do not have permission to delete this blog!', blog: result, blogs, title: 'Blog Details', userName });
+               })
+         }
       })
       .catch((err) => {
          console.log(err);
@@ -128,27 +151,6 @@ router.get('/userhome', (req, res) => {
 });
 
 
-
-
-
-
-router.get('/delete/:id', (req, res) => {
-   const id = req.params.id;
-   Blog.deleteOne({ _id: id, email: userEmail })
-      .then((result) => {
-         if (result.deletedCount > 0)
-            res.redirect('/blogs');
-         else {
-            Blog.findById(id)
-               .then((result) => {
-                  res.render('details', { currentPage: 'details', message: 'You do not have permission to delete this blog!', blog: result, title: 'Blog Details', userName });
-               })
-         }
-      })
-      .catch((err) => {
-         console.log(err);
-      });
-})
 // router.delete('/:id', (req, res) => {
 //    const id = req.params.id;
 //    Blog.findByIdAndDelete(id)

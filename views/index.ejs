@@ -44,8 +44,14 @@
                         <% if(blogs.length> 0) { %>
                            <!-- <h2>All blogs</h2> -->
                            <% blogs.forEach ( blog=> { %>
-                              <a href="/blogs/<%- blog.id %>"
-                                 class="blogs-data <%= blog_id === blog.id ? 'active' : '' %>">
+                              <!-- <a href="/blogs/<%- blog.id %>"
+                                 class="blogs-title <%= blog_id === blog.id ? 'active' : '' %>">
+                                 <%- blog.title %>
+                              </a> -->
+                              <a
+                                 tabindex="1"
+                                 onclick="loaddetails('<%= (blog.body) %>')"
+                                 class="blogs-title <%= blog_id === blog.id ? 'active' : '' %>">
                                  <%- blog.title %>
                               </a>
                               <% } ) } else { %>
@@ -61,19 +67,27 @@
                            Home
                         </div>
 
-                        <% } else{%>
-                           <div class="blog-details td">
-                              <h4>
-                                 <%= message %>
-                              </h4>
-                              <!-- <h3 class="title"> <%- blog.title %> </h3> -->
-
-                              <pre class="body"> <%= blog.body%> </pre>
+                        <% } else { %>
+                           <div class="blog-details">
+                              <% if(message) {%>
+                                 <h4>
+                                    <%- message %>
+                                 </h4>
+                                 <% }%>
+                                    <pre class="body"> <%= blog.body%> </pre>
                            </div>
                            <% }%>
                   </div>
 
                   <%- include('./partials/footer.ejs') %>
+
+                     <script>
+                        let blog_details = document.querySelector('.blog-details');
+                        function loaddetails(val) {
+                           blog_details.innerHTML = `<pre class="body">${val}</pre>`;
+                           // blog_details.body.style.background = #f4f4f4;
+                        }
+                     </script>
    </body>
 
 </html>
